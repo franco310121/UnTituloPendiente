@@ -1,0 +1,10 @@
+[gd_scene load_steps=0 format=3 uid="uid://mm2xxp6wooxh"]
+
+[node name="Mob" type="RigidBody2D" unique_id=1125625644]
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1560063064]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1506195189]
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=152390181]
