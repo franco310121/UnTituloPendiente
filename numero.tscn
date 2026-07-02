@@ -1,24 +1,25 @@
-[gd_scene load_steps=0 format=3 uid="uid://cdltj5chrsbs"]
+[gd_scene load_steps=2 format=3 uid="uid://cdltj5chrsbs"]
 
 [ext_resource type="Script" uid="uid://dxcyjo042ylfu" path="res://numero.gd" id="1_b28js"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x81yi"]
-size = Vector2(15, 22.5)
+size = Vector2(44, 44)
 
 [node name="Numero" type="Area2D" unique_id=1270806337 groups=["numeros"]]
 script = ExtResource("1_b28js")
 
-[node name="Label" type="Label" parent="." unique_id=703523064]
-offset_left = -224.0
-offset_top = 93.0
-offset_right = 224.0
-offset_bottom = 135.0
+[node name="Label" type="Label" parent="."]
+offset_left = -48.0
+offset_top = -38.0
+offset_right = 48.0
+offset_bottom = 38.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 5
-theme_override_font_sizes/font_size = 30
+theme_override_constants/outline_size = 7
+theme_override_font_sizes/font_size = 56
 text = "5"
 horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=410995857]
-position = Vector2(-0.5, 115.25)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_x81yi")
