@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d0w6csrk85s2u"
-path="res://.godot/imported/fondo.png-ba70bfea8a1397320d702391fbab30ab.ctex"
+path="res://.godot/imported/fondo.png-c815642419fe9cb779ed3cf89fc74a40.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://fondo.png"
-dest_files=["res://.godot/imported/fondo.png-ba70bfea8a1397320d702391fbab30ab.ctex"]
+source_file="res://scenes/minigames/minigame_01/sprites/fondo.png"
+dest_files=["res://.godot/imported/fondo.png-c815642419fe9cb779ed3cf89fc74a40.ctex"]
 
 [params]
 

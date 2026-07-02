@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://cfqphuup53d7t" path="res://scenes/player.tscn" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://qxx45jy572d3" path="res://scenes/levels/first_floor.tscn" id="2_0wfyh"]
-[ext_resource type="Script" uid="uid://csfq5j6xjlggd" path="res://puerta_mini_01.gd" id="3_jyhfs"]
+[ext_resource type="Script" uid="uid://csfq5j6xjlggd" path="res://scripts/puerta_mini_01.gd" id="3_jyhfs"]
 [ext_resource type="Texture2D" uid="uid://djx86ufwt0mlb" path="res://assets/images/buttons/E_boton-removebg-preview.png" id="4_tbgi4"]
-[ext_resource type="PackedScene" uid="uid://fw5jpon3gvem" path="res://mundo.tscn" id="4_tefeu"]
+[ext_resource type="PackedScene" uid="uid://fw5jpon3gvem" path="res://scenes/minigames/minigame_01/scenes/mingame_01.tscn" id="4_tefeu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tbgi4"]
 size = Vector2(161, 94)

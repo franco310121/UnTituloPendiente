@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://lxhyvo7g2wpx"
-path="res://.godot/imported/Custom _ Edited - Puyo Puyo _ Madou Monogatari Customs - Characters - Arle (Stardew Valley-Style).png-4ea0f95c21a343a84b41afb10a250750.ctex"
+path="res://.godot/imported/Custom _ Edited - Puyo Puyo _ Madou Monogatari Customs - Characters - Arle (Stardew Valley-Style).png-adb17923e1c97c7a2c8afe7fa4484023.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Custom _ Edited - Puyo Puyo _ Madou Monogatari Customs - Characters - Arle (Stardew Valley-Style).png"
-dest_files=["res://.godot/imported/Custom _ Edited - Puyo Puyo _ Madou Monogatari Customs - Characters - Arle (Stardew Valley-Style).png-4ea0f95c21a343a84b41afb10a250750.ctex"]
+source_file="res://scenes/minigames/minigame_01/sprites/Custom _ Edited - Puyo Puyo _ Madou Monogatari Customs - Characters - Arle (Stardew Valley-Style).png"
+dest_files=["res://.godot/imported/Custom _ Edited - Puyo Puyo _ Madou Monogatari Customs - Characters - Arle (Stardew Valley-Style).png-adb17923e1c97c7a2c8afe7fa4484023.ctex"]
 
 [params]
 

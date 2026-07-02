@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://b6f8i22t2m38j"]
 
 [ext_resource type="Texture2D" uid="uid://cfb7sdh65ipje" path="res://playerGrey_up1.png" id="1_hqtel"]
-[ext_resource type="Script" uid="uid://cr5hbqvim6uof" path="res://player_m1.gd" id="1_sweqy"]
+[ext_resource type="Script" uid="uid://cr5hbqvim6uof" path="res://scenes/minigames/minigame_01/scripts/player_m1.gd" id="1_sweqy"]
 [ext_resource type="Texture2D" uid="uid://dsg28ck6ny10l" path="res://playerGrey_up2.png" id="2_sweqy"]
-[ext_resource type="Texture2D" uid="uid://lxhyvo7g2wpx" path="res://Custom _ Edited - Puyo Puyo _ Madou Monogatari Customs - Characters - Arle (Stardew Valley-Style).png" id="4_hqtel"]
+[ext_resource type="Texture2D" uid="uid://lxhyvo7g2wpx" path="res://scenes/minigames/minigame_01/sprites/Custom _ Edited - Puyo Puyo _ Madou Monogatari Customs - Characters - Arle (Stardew Valley-Style).png" id="4_hqtel"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hqtel"]
 atlas = ExtResource("4_hqtel")
