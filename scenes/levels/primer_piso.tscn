@@ -11593,7 +11593,6 @@ texture = ExtResource("4_205hp")
 16:31/0 = 0
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1rte6"]
-load_path = "res://.godot/imported/gbstudio_seven_eleven_tileset_v2.png-c1c5ce917dfa48a331261031c70af850.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7o73u"]
 texture = SubResource("CompressedTexture2D_1rte6")
