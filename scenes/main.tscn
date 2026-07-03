@@ -15,11 +15,15 @@ size = Vector2(161, 94)
 scale = Vector2(2, 2)
 
 [node name="Player" parent="." instance=ExtResource("1_o5qli")]
-position = Vector2(645, 531)
+position = Vector2(3613, -569)
 scale = Vector2(4, 4)
 
+[node name="Camera2D2" type="Camera2D" parent="Player"]
+limit_smoothed = true
+position_smoothing_enabled = true
+
 [node name="Puerta_mini_01" type="Area2D" parent="."]
-position = Vector2(1424, -259)
+position = Vector2(4780, -1632)
 script = ExtResource("3_jyhfs")
 escena_destino = ExtResource("4_tefeu")
 
