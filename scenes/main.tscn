@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://c8w863fb1yj7i"]
 
 [ext_resource type="PackedScene" uid="uid://cfqphuup53d7t" path="res://scenes/player.tscn" id="1_o5qli"]
-[ext_resource type="PackedScene" uid="uid://qxx45jy572d3" path="res://scenes/levels/first_floor.tscn" id="2_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://qxx45jy572d3" path="res://scenes/levels/patio_exterior.tscn" id="2_0wfyh"]
 [ext_resource type="Script" uid="uid://csfq5j6xjlggd" path="res://scripts/puerta_mini_01.gd" id="3_jyhfs"]
 [ext_resource type="Texture2D" uid="uid://djx86ufwt0mlb" path="res://assets/images/buttons/E_boton-removebg-preview.png" id="4_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://fw5jpon3gvem" path="res://scenes/minigames/minigame_01/scenes/mingame_01.tscn" id="4_tefeu"]
@@ -15,7 +15,7 @@ size = Vector2(161, 94)
 scale = Vector2(2, 2)
 
 [node name="Player" parent="." instance=ExtResource("1_o5qli")]
-position = Vector2(854, 488)
+position = Vector2(645, 531)
 scale = Vector2(4, 4)
 
 [node name="Puerta_mini_01" type="Area2D" parent="."]

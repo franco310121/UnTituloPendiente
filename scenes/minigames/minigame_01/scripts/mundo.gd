@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var numero_escena: PackedScene = preload("res://scenes/minigames/minigame_01/scenesw/numero.tscn")
+@export var numero_escena: PackedScene = preload("res://scenes/minigames/minigame_01/scenes/numero.tscn")
 
 @onready var label_operacion: Label = $UI/PanelSuperior/LabelOperacion
 @onready var label_meta_valor: Label = $UI/PanelSuperior/LabelMetaValor
