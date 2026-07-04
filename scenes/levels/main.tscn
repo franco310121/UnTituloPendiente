@@ -34491,7 +34491,7 @@ position = Vector2(2385, -1477)
 position = Vector2(16309, -4342)
 
 [node name="pabellon_b_marker_in" type="Marker2D" parent="markers"]
-position = Vector2(9571, -4260)
+position = Vector2(9571, -4228)
 
 [node name="pabellon_c_marker_in" type="Marker2D" parent="markers"]
 position = Vector2(12587, -5322)
