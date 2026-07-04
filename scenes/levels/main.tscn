@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://c5k72ubnwlpxt"]
+[gd_scene load_steps=25 format=4 uid="uid://c5k72ubnwlpxt"]
 
 [ext_resource type="PackedScene" uid="uid://qxx45jy572d3" path="res://scenes/levels/patio_exterior.tscn" id="1_ubwgw"]
 [ext_resource type="PackedScene" uid="uid://cfqphuup53d7t" path="res://scenes/player.tscn" id="2_vkq25"]
@@ -34453,6 +34453,9 @@ size = Vector2(57, 301)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dj21o"]
 size = Vector2(128, 44.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rssyh"]
+size = Vector2(123.75, 33)
+
 [node name="Main" type="Node2D"]
 
 [node name="Edificios" type="TileMapLayer" parent="."]
@@ -34655,12 +34658,25 @@ script = ExtResource("6_2xkjh")
 ruta_escena_destino = "uid://fw5jpon3gvem"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="minigame_01"]
-position = Vector2(15498, -4505)
+position = Vector2(15506, -4505)
 shape = SubResource("RectangleShape2D_dj21o")
 
 [node name="Sprite2D" type="Sprite2D" parent="minigame_01"]
 visible = false
 position = Vector2(15548, -4600)
+texture = ExtResource("11_2xkjh")
+
+[node name="minigame_02" type="Area2D" parent="."]
+position = Vector2(10391, -4370)
+script = ExtResource("6_2xkjh")
+ruta_escena_destino = "uid://bx4eq4y0cwaps"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="minigame_02"]
+position = Vector2(-13, -42)
+shape = SubResource("RectangleShape2D_rssyh")
+
+[node name="Sprite2D" type="Sprite2D" parent="minigame_02"]
+position = Vector2(42, -135)
 texture = ExtResource("11_2xkjh")
 
 [connection signal="body_entered" from="puerta_tienda" to="puerta_tienda" method="_on_body_entered"]
@@ -34685,3 +34701,5 @@ texture = ExtResource("11_2xkjh")
 [connection signal="body_entered" from="conect_c_a" to="conect_c_a" method="_on_body_entered"]
 [connection signal="body_entered" from="minigame_01" to="minigame_01" method="_on_body_entered"]
 [connection signal="body_exited" from="minigame_01" to="minigame_01" method="_on_body_exited"]
+[connection signal="body_entered" from="minigame_02" to="minigame_02" method="_on_body_entered"]
+[connection signal="body_exited" from="minigame_02" to="minigame_02" method="_on_body_exited"]

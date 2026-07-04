@@ -60,7 +60,7 @@ func cargar_nivel():
 		
 		await get_tree().create_timer(1.5).timeout
 		
-		var coordenadas_salida = Vector2(15497, -4461) # Cambia esto por las coordenadas exactas
+		var coordenadas_salida = Vector2(10379, -4352.0) # Cambia esto por las coordenadas exactas
 		
 		# Usamos el GameManager para cambiar de escena con la posición guardada
 		var ruta_main = preload("res://scenes/levels/main.tscn")
