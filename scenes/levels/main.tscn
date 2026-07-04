@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://c5k72ubnwlpxt"]
+[gd_scene load_steps=27 format=4 uid="uid://c5k72ubnwlpxt"]
 
 [ext_resource type="PackedScene" uid="uid://qxx45jy572d3" path="res://scenes/levels/patio_exterior.tscn" id="1_ubwgw"]
 [ext_resource type="PackedScene" uid="uid://cfqphuup53d7t" path="res://scenes/player.tscn" id="2_vkq25"]
@@ -34459,6 +34459,9 @@ size = Vector2(123.75, 33)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hwp66"]
 size = Vector2(113, 26)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2xkjh"]
+size = Vector2(132.5, 35)
+
 [node name="Main" type="Node2D"]
 
 [node name="Edificios" type="TileMapLayer" parent="."]
@@ -34697,6 +34700,20 @@ visible = false
 position = Vector2(60, -91)
 texture = ExtResource("11_2xkjh")
 
+[node name="minigame_04" type="Area2D" parent="."]
+position = Vector2(15084, -4380)
+script = ExtResource("6_2xkjh")
+ruta_escena_destino = "uid://buwq60pru1bst"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="minigame_04"]
+position = Vector2(-100, -126)
+shape = SubResource("RectangleShape2D_2xkjh")
+
+[node name="Sprite2D" type="Sprite2D" parent="minigame_04"]
+visible = false
+position = Vector2(-48, -222)
+texture = ExtResource("11_2xkjh")
+
 [connection signal="body_entered" from="puerta_tienda" to="puerta_tienda" method="_on_body_entered"]
 [connection signal="body_exited" from="puerta_tienda" to="puerta_tienda" method="_on_body_exited"]
 [connection signal="body_entered" from="puerta_p_a" to="puerta_p_a" method="_on_body_entered"]
@@ -34723,3 +34740,5 @@ texture = ExtResource("11_2xkjh")
 [connection signal="body_exited" from="minigame_02" to="minigame_02" method="_on_body_exited"]
 [connection signal="body_entered" from="minigame_03" to="minigame_03" method="_on_body_entered"]
 [connection signal="body_exited" from="minigame_03" to="minigame_03" method="_on_body_exited"]
+[connection signal="body_entered" from="minigame_04" to="minigame_04" method="_on_body_entered"]
+[connection signal="body_exited" from="minigame_04" to="minigame_04" method="_on_body_exited"]

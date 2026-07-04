@@ -1,0 +1,162 @@
+[gd_scene load_steps=14 format=3 uid="uid://buwq60pru1bst"]
+
+[ext_resource type="Texture2D" uid="uid://b83pukvn2r7dk" path="res://scenes/minigames/minigame_04/assets/pc-removebg-preview.png" id="1_3vk4q"]
+[ext_resource type="Script" uid="uid://boqcfgtbi40vy" path="res://scenes/minigames/minigame_04/scripts/Minigame04.gd" id="1_k04u6"]
+[ext_resource type="Texture2D" uid="uid://cpeibilthdq3o" path="res://scenes/minigames/minigame_04/assets/procesador-removebg-preview.png" id="2_5lvkx"]
+[ext_resource type="Script" uid="uid://4pp4ejrj34fs" path="res://scenes/minigames/minigame_04/scripts/ProcesadorPieza.gd" id="2_7bmtp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5lvkx"]
+size = Vector2(31, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3vk4q"]
+size = Vector2(20, 73)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7bmtp"]
+size = Vector2(53, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k04u6"]
+size = Vector2(56, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tctu7"]
+size = Vector2(116, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wvvuw"]
+size = Vector2(76, 43)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8rxod"]
+size = Vector2(35, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d5x58"]
+size = Vector2(36, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l62iw"]
+size = Vector2(1143, 20)
+
+[node name="Minigame04" type="Node2D"]
+script = ExtResource("1_k04u6")
+metadata/_edit_horizontal_guides_ = [251.0]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 408.0
+offset_top = 297.0
+offset_right = 747.0
+offset_bottom = 643.0
+texture = ExtResource("1_3vk4q")
+expand_mode = 1
+
+[node name="areas" type="Node" parent="."]
+
+[node name="AreaProcesador" type="Area2D" parent="areas"]
+position = Vector2(-3, -61)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="areas/AreaProcesador"]
+position = Vector2(530.5, 458)
+shape = SubResource("RectangleShape2D_5lvkx")
+
+[node name="ColorRect" type="ColorRect" parent="areas/AreaProcesador"]
+offset_left = 515.0
+offset_top = 444.0
+offset_right = 546.0
+offset_bottom = 473.0
+color = Color(0.211765, 0.713726, 0.290196, 0.254902)
+
+[node name="AreaRam" type="Area2D" parent="areas"]
+position = Vector2(609, 392)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="areas/AreaRam"]
+position = Vector2(-36, 5.5)
+shape = SubResource("RectangleShape2D_3vk4q")
+
+[node name="ColorRect" type="ColorRect" parent="areas/AreaRam"]
+offset_left = -46.0
+offset_top = -31.0
+offset_right = -26.0
+offset_bottom = 42.0
+color = Color(0.211765, 0.713726, 0.290196, 0.254902)
+
+[node name="AreaGrafica" type="Area2D" parent="areas"]
+position = Vector2(-4, -48)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="areas/AreaGrafica"]
+position = Vector2(508.5, 505)
+shape = SubResource("RectangleShape2D_7bmtp")
+
+[node name="ColorRect" type="ColorRect" parent="areas/AreaGrafica"]
+offset_left = 482.0
+offset_top = 500.0
+offset_right = 535.0
+offset_bottom = 510.0
+color = Color(0.211765, 0.713726, 0.290196, 0.254902)
+
+[node name="AreaSsd" type="Area2D" parent="areas"]
+position = Vector2(-2, -52)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="areas/AreaSsd"]
+position = Vector2(513, 491)
+shape = SubResource("RectangleShape2D_k04u6")
+
+[node name="ColorRect" type="ColorRect" parent="areas/AreaSsd"]
+offset_left = 485.0
+offset_top = 486.0
+offset_right = 541.0
+offset_bottom = 496.0
+color = Color(0.211765, 0.713726, 0.290196, 0.254902)
+
+[node name="AreaCooling" type="Area2D" parent="areas"]
+position = Vector2(-3, -84)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="areas/AreaCooling"]
+position = Vector2(534, 407)
+shape = SubResource("RectangleShape2D_tctu7")
+
+[node name="ColorRect" type="ColorRect" parent="areas/AreaCooling"]
+offset_left = 476.0
+offset_top = 401.0
+offset_right = 592.0
+offset_bottom = 413.0
+color = Color(0.211765, 0.713726, 0.290196, 0.254902)
+
+[node name="AreaFuente" type="Area2D" parent="areas"]
+position = Vector2(-20, -18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="areas/AreaFuente"]
+position = Vector2(490, 601.5)
+shape = SubResource("RectangleShape2D_wvvuw")
+
+[node name="ColorRect" type="ColorRect" parent="areas/AreaFuente"]
+offset_left = 452.0
+offset_top = 580.0
+offset_right = 528.0
+offset_bottom = 623.0
+color = Color(0.211765, 0.713726, 0.290196, 0.254902)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("2_7bmtp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(580.5, 47)
+shape = SubResource("RectangleShape2D_8rxod")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(579.938, 47.0271)
+scale = Vector2(0.0774899, 0.0774899)
+texture = ExtResource("2_5lvkx")
+
+[node name="AreaDetector" type="Area2D" parent="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/AreaDetector"]
+position = Vector2(580, 47)
+shape = SubResource("RectangleShape2D_d5x58")
+
+[node name="LimiteInferior" type="Area2D" parent="."]
+position = Vector2(418, 654)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LimiteInferior"]
+position = Vector2(164.5, 2)
+shape = SubResource("RectangleShape2D_l62iw")
+
+[node name="MensajeLabel" type="Label" parent="."]
+offset_left = 201.0
+offset_top = 367.0
+offset_right = 241.0
+offset_bottom = 390.0
