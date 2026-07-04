@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://cwhx8p57xtugw"]
+
+[ext_resource type="Script" uid="uid://2yax12y14q1u" path="res://scenes/minigames/minigame_03/game/game.gd" id="1_2fm81"]
+[ext_resource type="Texture2D" uid="uid://drnslwr1gira5" path="res://scenes/minigames/minigame_03/assets/Space_Stars2.png" id="1_6celb"]
+[ext_resource type="PackedScene" uid="uid://cfjyxcp501cx" path="res://scenes/minigames/minigame_03/ui/hud/hud.tscn" id="1_76xuu"]
+[ext_resource type="PackedScene" uid="uid://cew731ymy6cck" path="res://scenes/minigames/minigame_03/elements/space_ship/space_ship.tscn" id="2_kvvfx"]
+[ext_resource type="PackedScene" uid="uid://dybtgfdhf7ml4" path="res://scenes/minigames/minigame_03/elements/wall/wall.tscn" id="3_gr16u"]
+[ext_resource type="AudioStream" uid="uid://cpnm6g7oswe5f" path="res://scenes/minigames/minigame_03/music/backgroundmusic.mp3" id="8_y36n6"]
+[ext_resource type="Script" uid="uid://62v4sfdnwf71" path="res://scenes/minigames/minigame_03/game/camera_shake.gd" id="9_l8g03"]
+
+[node name="Game" type="Node2D"]
+scale = Vector2(1.65, 1.65)
+script = ExtResource("1_2fm81")
+
+[node name="HUD" parent="." instance=ExtResource("1_76xuu")]
+scale = Vector2(1.5, 1.5)
+transform = Transform2D(1.5, 0, 0, 1.5, 0, 0)
+
+[node name="Backround" type="Sprite2D" parent="."]
+texture_repeat = 2
+position = Vector2(124.848, 118.182)
+scale = Vector2(1.65, 1.65)
+texture = ExtResource("1_6celb")
+region_enabled = true
+region_rect = Rect2(0, 0, 256, 240)
+
+[node name="SpaceShip" parent="." instance=ExtResource("2_kvvfx")]
+position = Vector2(131, 261.212)
+scale = Vector2(1.65, 1.65)
+
+[node name="Wall" parent="." instance=ExtResource("3_gr16u")]
+position = Vector2(-100.606, -79.3939)
+scale = Vector2(1.65, 1.65)
+
+[node name="Wall2" parent="." instance=ExtResource("3_gr16u")]
+position = Vector2(348.485, -81.8182)
+scale = Vector2(1.65, 1.65)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_y36n6")
+volume_db = -33.306
+autoplay = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(129, 120)
+scale = Vector2(1.65, 1.65)
+script = ExtResource("9_l8g03")
+
+[node name="WaveTimer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = 47.2727
+offset_top = 111.515
+offset_right = 87.2727
+offset_bottom = 134.515

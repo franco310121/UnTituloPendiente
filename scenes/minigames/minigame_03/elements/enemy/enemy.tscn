@@ -1,0 +1,80 @@
+[gd_scene load_steps=10 format=3 uid="uid://bbmspky0nvucp"]
+
+[ext_resource type="Script" uid="uid://wmla5bgn3506" path="res://scenes/minigames/minigame_03/elements/enemy/enemy.gd" id="1_6lgxk"]
+[ext_resource type="Texture2D" uid="uid://ba7uypn7qp66w" path="res://scenes/minigames/minigame_03/assets/godot-invader-small.png" id="1_n8175"]
+[ext_resource type="AudioStream" uid="uid://u34fwghktcwd" path="res://scenes/minigames/minigame_03/music/explosion.mp3" id="3_ek21h"]
+
+[sub_resource type="Gradient" id="Gradient_j4vrh"]
+offsets = PackedFloat32Array(0.161137, 0.476987, 0.995261, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ek21h"]
+gradient = SubResource("Gradient_j4vrh")
+width = 3
+height = 3
+fill = 2
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fo7yi"]
+atlas = ExtResource("1_n8175")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_er2vl"]
+atlas = ExtResource("1_n8175")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_72eja"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fo7yi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_er2vl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vle8u"]
+radius = 9.0
+
+[node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
+scale = Vector2(1.5, 1.5)
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_6lgxk")
+
+[node name="ExplosionParticles" type="CPUParticles2D" parent="."]
+top_level = true
+z_index = 10
+emitting = false
+amount = 20
+texture = SubResource("GradientTexture2D_ek21h")
+lifetime = 0.39
+one_shot = true
+explosiveness = 1.0
+direction = Vector2(1, 1)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 150.0
+color = Color(0.305882, 0.866667, 0.835294, 1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_72eja")
+autoplay = "default"
+frame_progress = 0.493492
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_vle8u")
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+target_position = Vector2(-15, 0)
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+target_position = Vector2(15, 0)
+
+[node name="ExplosionSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ek21h")
+volume_db = -13.534

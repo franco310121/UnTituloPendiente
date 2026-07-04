@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://cew731ymy6cck"]
+
+[ext_resource type="Script" uid="uid://bco7bvg35hf77" path="res://scenes/minigames/minigame_03/elements/space_ship/space_ship.gd" id="1_jh3jt"]
+[ext_resource type="Texture2D" uid="uid://cdx74i82lwofg" path="res://scenes/minigames/minigame_03/assets/space_ship.png" id="1_k6mee"]
+[ext_resource type="AudioStream" uid="uid://6fks64fob30s" path="res://scenes/minigames/minigame_03/music/disparo.mp3" id="3_rnxcu"]
+[ext_resource type="AudioStream" uid="uid://bh81gor63pexu" path="res://scenes/minigames/minigame_03/music/damage.mp3" id="4_klmva"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_186pn"]
+radius = 16.0
+
+[node name="SpaceShip" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_jh3jt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_k6mee")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_186pn")
+
+[node name="ShootSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_rnxcu")
+volume_db = -23.507
+
+[node name="DamageSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_klmva")
+volume_db = -14.614

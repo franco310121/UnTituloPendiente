@@ -18,6 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameManager="*res://scripts/GameManager.gd"
+Events="*res://scenes/minigames/minigame_03/core/events.gd"
+Globals="*res://scenes/minigames/minigame_03/core/globals.gd"
 
 [input]
 
