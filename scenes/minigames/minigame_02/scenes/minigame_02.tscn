@@ -1,0 +1,65 @@
+[gd_scene load_steps=4 format=3 uid="uid://bx4eq4y0cwaps"]
+
+[ext_resource type="Script" uid="uid://dw6m17ve6x0mm" path="res://scenes/minigames/minigame_02/scripts/CodigoNivel.gd" id="1_8ig24"]
+[ext_resource type="Texture2D" uid="uid://dk46ndmsx1vro" path="res://scenes/minigames/minigame_02/sprites/terminal_background.png" id="2_k1btv"]
+[ext_resource type="FontFile" uid="uid://de52maoclxyvh" path="res://scenes/minigames/minigame_02/sprites/JetBrainsMono-SemiBold.ttf" id="3_ea7wf"]
+
+[node name="Minigame02" type="Node2D"]
+script = ExtResource("1_8ig24")
+
+[node name="Terminal" type="TextureRect" parent="."]
+offset_left = 46.0
+offset_top = 29.0
+offset_right = 1074.0
+offset_bottom = 605.0
+texture = ExtResource("2_k1btv")
+expand_mode = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 1154.0
+offset_bottom = 652.0
+
+[node name="LabelCodigo" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 246.0
+offset_top = 121.0
+offset_right = 865.0
+offset_bottom = 324.0
+theme_override_fonts/font = ExtResource("3_ea7wf")
+theme_override_font_sizes/font_size = 24
+text = "public class Main {
+   public static void main(String[] args) {
+        System.out.println(\\\"____\\\");  
+  }
+}"
+
+[node name="CampoRespuesta" type="LineEdit" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 316.0
+offset_top = 458.0
+offset_right = 773.0
+offset_bottom = 539.0
+theme_override_fonts/font = ExtResource("3_ea7wf")
+placeholder_text = "Escribe aquí la respuesta..."
+
+[node name="LabelSugerencias" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 346.0
+offset_top = 392.0
+offset_right = 742.0
+offset_bottom = 446.0
+theme_override_fonts/font = ExtResource("3_ea7wf")
+text = "\"Hello World\", \"Hola Mundo\", \"Print\""
+
+[node name="LabelLenguaje" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 393.0
+offset_top = 16.0
+offset_right = 551.0
+offset_bottom = 47.0
+text = "Java"
+horizontal_alignment = 1

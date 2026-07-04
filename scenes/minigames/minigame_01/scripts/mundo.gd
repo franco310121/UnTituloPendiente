@@ -48,7 +48,6 @@ func iniciar_nuevo_nivel():
 	actualizar_textos()
 
 func actualizar_textos():
-	var faltante = objetivo - suma_actual
 
 	label_operacion.text = str(numero_a) + " + " + str(numero_b)
 	label_meta_valor.text = str(objetivo)
