@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://c5k72ubnwlpxt"]
+[gd_scene load_steps=26 format=4 uid="uid://c5k72ubnwlpxt"]
 
 [ext_resource type="PackedScene" uid="uid://qxx45jy572d3" path="res://scenes/levels/patio_exterior.tscn" id="1_ubwgw"]
 [ext_resource type="PackedScene" uid="uid://cfqphuup53d7t" path="res://scenes/player.tscn" id="2_vkq25"]
@@ -34456,6 +34456,9 @@ size = Vector2(128, 44.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rssyh"]
 size = Vector2(123.75, 33)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hwp66"]
+size = Vector2(113, 26)
+
 [node name="Main" type="Node2D"]
 
 [node name="Edificios" type="TileMapLayer" parent="."]
@@ -34676,7 +34679,22 @@ position = Vector2(-13, -42)
 shape = SubResource("RectangleShape2D_rssyh")
 
 [node name="Sprite2D" type="Sprite2D" parent="minigame_02"]
-position = Vector2(42, -135)
+visible = false
+position = Vector2(35, -139)
+texture = ExtResource("11_2xkjh")
+
+[node name="minigame_03" type="Area2D" parent="."]
+position = Vector2(9860, -4407)
+script = ExtResource("6_2xkjh")
+ruta_escena_destino = "uid://cwhx8p57xtugw"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="minigame_03"]
+position = Vector2(6.5, 3)
+shape = SubResource("RectangleShape2D_hwp66")
+
+[node name="Sprite2D" type="Sprite2D" parent="minigame_03"]
+visible = false
+position = Vector2(60, -91)
 texture = ExtResource("11_2xkjh")
 
 [connection signal="body_entered" from="puerta_tienda" to="puerta_tienda" method="_on_body_entered"]
@@ -34703,3 +34721,5 @@ texture = ExtResource("11_2xkjh")
 [connection signal="body_exited" from="minigame_01" to="minigame_01" method="_on_body_exited"]
 [connection signal="body_entered" from="minigame_02" to="minigame_02" method="_on_body_entered"]
 [connection signal="body_exited" from="minigame_02" to="minigame_02" method="_on_body_exited"]
+[connection signal="body_entered" from="minigame_03" to="minigame_03" method="_on_body_entered"]
+[connection signal="body_exited" from="minigame_03" to="minigame_03" method="_on_body_exited"]

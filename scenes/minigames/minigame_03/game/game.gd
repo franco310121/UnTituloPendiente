@@ -11,6 +11,7 @@ var last_spawned_row: Node2D = null
 var game_over_active := false
 var is_spawning := false
 
+
 func _ready():
 	label_victoria.visible = false
 	
@@ -27,6 +28,12 @@ func _ready():
 func _on_points_changed(new_points: int):
 	if new_points >= 14:
 		mostrar_mensaje_especial("¡NIVEL COMPLETADO!")
+		await get_tree().create_timer(1.5).timeout
+		var coordenadas_salida = Vector2(9860.0, -4352.0) # Cambia esto por las coordenadas exactas
+			
+			# Usamos el GameManager para cambiar de escena con la posición guardada
+		var ruta_main = preload("res://scenes/levels/main.tscn")
+		GameManager.cambiar_escena_con_spawn(ruta_main, coordenadas_salida)
 
 func mostrar_mensaje_especial(mensaje: String):
 	label_victoria.text = mensaje
