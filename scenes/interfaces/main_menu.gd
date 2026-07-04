@@ -5,8 +5,7 @@ extends CanvasLayer
 @onready var exit_button: Button = $UIContainer/ButtonsContainer/ExitButton
 
 # Reemplaza esto con la ruta real de tu primera escena de juego (ej: "res://levels/first_level.tscn")
-const FIRST_SCENE_PATH = "res://scenes/main.tscn"
-
+const FIRST_SCENE_PATH = "res://scenes/levels/main.tscn"
 func _ready():
 	# Nos aseguramos de que el juego esté en modo ratón al iniciar el menú
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
