@@ -4,8 +4,7 @@ extends Node2D
 
 @onready var label_operacion: Label = $UI/PanelSuperior/LabelOperacion
 @onready var label_meta_valor: Label = $UI/PanelSuperior/LabelMetaValor
-@onready var label_suma_valor: Label = $UI/PanelSuperior/LabelSumaValor
-@onready var label_estado_suma: Label = $UI/PanelSuperior/LabelEstadoSuma
+@onready var label_suma_valor: Label = $Player_m1/LabelSumaValor
 @onready var label_tiempo: Label = $UI/PanelSuperior/LabelTiempo
 @onready var barra_tiempo: ProgressBar = $UI/PanelSuperior/BarraTiempo
 @onready var label_vidas: Label = $UI/PanelSuperior/LabelVidas
@@ -35,11 +34,6 @@ func _ready():
 	else:
 		push_error("No se encontro el nodo 'Player_m1' en la escena Mundo.")
 
-	label_mensaje.text = "Preparate"
-	await get_tree().create_timer(2.0).timeout
-	if label_mensaje.text == "Preparate":
-		label_mensaje.text = ""
-
 	iniciar_nuevo_nivel()
 
 func iniciar_nuevo_nivel():
@@ -59,15 +53,6 @@ func actualizar_textos():
 	label_operacion.text = str(numero_a) + " + " + str(numero_b)
 	label_meta_valor.text = str(objetivo)
 	label_suma_valor.text = str(suma_actual)
-
-	if suma_actual == 0:
-		label_estado_suma.text = "Todavia no recoges numeros"
-	elif faltante > 0:
-		label_estado_suma.text = "Te faltan " + str(faltante) + " puntos"
-	elif faltante == 0:
-		label_estado_suma.text = "Exacto. Ya llegaste al resultado"
-	else:
-		label_estado_suma.text = "Te pasaste por " + str(abs(faltante))
 
 	label_instruccion.text = "Cae sobre numeros hasta llegar exactamente al resultado."
 	label_vidas.text = "Vidas: " + str(vidas)
@@ -97,18 +82,22 @@ func perder_vida():
 		mostrar_mensaje("Perdiste una vida. Te quedan: " + str(vidas))
 		iniciar_nuevo_nivel()
 	else:
-		mostrar_mensaje("Juego terminado. Reiniciando...")
-		vidas = 3
-		get_tree().paused = false
-		juego_pausado = false
-		get_tree().change_scene_to_file("res://scenes/main.tscn")
+		mostrar_mensaje("Juego terminado.")
+
+		# --- MODIFICACIÓN AQUÍ ---
+		# Definimos las coordenadas a donde queremos que Mateo aparezca en el main
+		var coordenadas_salida = Vector2(15497, -4461) # Cambia esto por las coordenadas exactas
+		
+		# Usamos el GameManager para cambiar de escena con la posición guardada
+		var ruta_main = preload("res://scenes/levels/main.tscn")
+		GameManager.cambiar_escena_con_spawn(ruta_main, coordenadas_salida)
 
 func _on_generador_timer_timeout():
 	if juego_pausado:
 		return
 
 	var nuevo_numero = numero_escena.instantiate()
-	var posicion_x_aleatoria = randf_range(50, 1100)
+	var posicion_x_aleatoria = randf_range(250, 870)
 	nuevo_numero.position = Vector2(posicion_x_aleatoria, -50)
 	add_child(nuevo_numero)
 

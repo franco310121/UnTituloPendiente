@@ -8,25 +8,28 @@
 script = ExtResource("1_fp4e4")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -105.0
-offset_top = 3.0
-offset_right = 640.0
-offset_bottom = 723.0
-texture = ExtResource("3_fw4w5")
-expand_mode = 1
-stretch_mode = 6
-
-[node name="TextureRect" type="TextureRect" parent="TextureRect"]
-layout_mode = 0
-offset_left = 745.0
-offset_right = 1490.0
-offset_bottom = 720.0
+offset_left = 253.0
+offset_top = -6.0
+offset_right = 922.0
+offset_bottom = 641.0
 texture = ExtResource("3_fw4w5")
 expand_mode = 1
 stretch_mode = 6
 
 [node name="Player_m1" parent="." instance=ExtResource("2_fw4w5")]
-position = Vector2(253, 668)
+position = Vector2(577, 597)
+
+[node name="LabelSumaValor" type="Label" parent="Player_m1"]
+offset_left = -17.0
+offset_top = -97.0
+offset_right = 114.0
+offset_bottom = -42.0
+theme_override_colors/font_color = Color(0.611765, 1, 0.713726, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 38
+text = "0"
+vertical_alignment = 1
 
 [node name="GeneradorTimer" type="Timer" parent="."]
 wait_time = 0.5
@@ -50,10 +53,10 @@ color = Color(0.0980392, 0.156863, 0.27451, 0.901961)
 
 [node name="LabelOperacionTitulo" type="Label" parent="UI/PanelSuperior"]
 layout_mode = 0
-offset_left = 28.0
-offset_top = 14.0
-offset_right = 205.0
-offset_bottom = 37.0
+offset_left = 382.0
+offset_top = 17.0
+offset_right = 559.0
+offset_bottom = 41.0
 theme_override_colors/font_color = Color(0.803922, 0.898039, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
@@ -62,10 +65,10 @@ text = "Operacion"
 
 [node name="LabelOperacion" type="Label" parent="UI/PanelSuperior"]
 layout_mode = 0
-offset_left = 26.0
-offset_top = 33.0
-offset_right = 304.0
-offset_bottom = 88.0
+offset_left = 387.0
+offset_top = 43.0
+offset_right = 665.0
+offset_bottom = 98.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
@@ -75,10 +78,10 @@ vertical_alignment = 1
 
 [node name="LabelMetaTitulo" type="Label" parent="UI/PanelSuperior"]
 layout_mode = 0
-offset_left = 345.0
-offset_top = 14.0
-offset_right = 476.0
-offset_bottom = 37.0
+offset_left = 669.0
+offset_top = 11.0
+offset_right = 800.0
+offset_bottom = 35.0
 theme_override_colors/font_color = Color(0.803922, 0.898039, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
@@ -87,10 +90,10 @@ text = "Meta exacta"
 
 [node name="LabelMetaValor" type="Label" parent="UI/PanelSuperior"]
 layout_mode = 0
-offset_left = 347.0
-offset_top = 33.0
-offset_right = 462.0
-offset_bottom = 88.0
+offset_left = 669.0
+offset_top = 43.0
+offset_right = 784.0
+offset_bottom = 98.0
 theme_override_colors/font_color = Color(1, 0.92549, 0.45098, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
@@ -98,50 +101,12 @@ theme_override_font_sizes/font_size = 38
 text = "20"
 vertical_alignment = 1
 
-[node name="LabelSumaTitulo" type="Label" parent="UI/PanelSuperior"]
-layout_mode = 0
-offset_left = 515.0
-offset_top = 14.0
-offset_right = 698.0
-offset_bottom = 37.0
-theme_override_colors/font_color = Color(0.803922, 0.898039, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 3
-theme_override_font_sizes/font_size = 17
-text = "Tu puntaje actual"
-
-[node name="LabelSumaValor" type="Label" parent="UI/PanelSuperior"]
-layout_mode = 0
-offset_left = 517.0
-offset_top = 33.0
-offset_right = 648.0
-offset_bottom = 88.0
-theme_override_colors/font_color = Color(0.611765, 1, 0.713726, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 5
-theme_override_font_sizes/font_size = 38
-text = "0"
-vertical_alignment = 1
-
-[node name="LabelEstadoSuma" type="Label" parent="UI/PanelSuperior"]
-layout_mode = 0
-offset_left = 683.0
-offset_top = 35.0
-offset_right = 978.0
-offset_bottom = 76.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 4
-theme_override_font_sizes/font_size = 24
-text = "Te faltan 20 puntos"
-vertical_alignment = 1
-
 [node name="LabelTiempo" type="Label" parent="UI/PanelSuperior"]
 layout_mode = 0
-offset_left = 991.0
-offset_top = 16.0
-offset_right = 1138.0
-offset_bottom = 44.0
+offset_left = 912.0
+offset_top = 3.0
+offset_right = 1059.0
+offset_bottom = 31.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
@@ -150,20 +115,20 @@ text = "Tiempo: 15s"
 
 [node name="BarraTiempo" type="ProgressBar" parent="UI/PanelSuperior"]
 layout_mode = 0
-offset_left = 991.0
-offset_top = 48.0
-offset_right = 1206.0
-offset_bottom = 72.0
+offset_left = 901.0
+offset_top = 42.0
+offset_right = 1116.0
+offset_bottom = 66.0
 max_value = 15.0
 value = 15.0
 show_percentage = false
 
 [node name="LabelVidas" type="Label" parent="UI/PanelSuperior"]
 layout_mode = 0
-offset_left = 991.0
-offset_top = 78.0
-offset_right = 1128.0
-offset_bottom = 103.0
+offset_left = 26.0
+offset_top = 454.0
+offset_right = 163.0
+offset_bottom = 482.0
 theme_override_colors/font_color = Color(1, 0.901961, 0.901961, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
@@ -172,28 +137,30 @@ text = "Vidas: 3"
 
 [node name="BotonPausa" type="Button" parent="UI/PanelSuperior"]
 layout_mode = 0
-offset_left = 1132.0
-offset_top = 76.0
-offset_right = 1214.0
-offset_bottom = 104.0
+offset_left = 14.0
+offset_top = 329.0
+offset_right = 96.0
+offset_bottom = 360.0
 text = "Pausa"
 
 [node name="LabelInstruccion" type="Label" parent="UI"]
 offset_left = 30.0
 offset_top = 138.0
-offset_right = 667.0
-offset_bottom = 166.0
+offset_right = 197.0
+offset_bottom = 253.0
 theme_override_colors/font_color = Color(1, 0.972549, 0.780392, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_font_sizes/font_size = 20
-text = "Cae sobre numeros hasta llegar exactamente al resultado."
+text = "Recoge números 
+hasta llegar al
+resultado"
 
 [node name="LabelMensaje" type="Label" parent="UI"]
-offset_left = 760.0
-offset_top = 138.0
-offset_right = 1239.0
-offset_bottom = 175.0
+offset_left = 931.0
+offset_top = 278.0
+offset_right = 1150.0
+offset_bottom = 499.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4

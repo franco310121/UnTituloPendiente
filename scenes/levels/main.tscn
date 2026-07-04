@@ -1,13 +1,15 @@
-[gd_scene load_steps=21 format=4 uid="uid://c5k72ubnwlpxt"]
+[gd_scene load_steps=24 format=4 uid="uid://c5k72ubnwlpxt"]
 
 [ext_resource type="PackedScene" uid="uid://qxx45jy572d3" path="res://scenes/levels/patio_exterior.tscn" id="1_ubwgw"]
 [ext_resource type="PackedScene" uid="uid://cfqphuup53d7t" path="res://scenes/player.tscn" id="2_vkq25"]
 [ext_resource type="Script" uid="uid://igmq4mhfiwqi" path="res://scripts/cambiar_escena.gd" id="3_y0acb"]
 [ext_resource type="Texture2D" uid="uid://bw5y1mev15gu6" path="res://assets/images/tileset/Library/Library.png" id="4_vkq25"]
 [ext_resource type="Texture2D" uid="uid://cd4mssr6dtfj8" path="res://assets/images/tileset/Hospital/1.png" id="5_vkq25"]
+[ext_resource type="Script" uid="uid://csfq5j6xjlggd" path="res://scripts/puerta_mini_01.gd" id="6_2xkjh"]
 [ext_resource type="Texture2D" uid="uid://bmcl4xiku0cfp" path="res://assets/images/tileset/store/Interiors_free_48x48.png" id="6_7lrji"]
 [ext_resource type="Texture2D" uid="uid://bojdk6h8smf80" path="res://assets/images/tileset/Hospital/Hospital_1.png" id="7_rssyh"]
 [ext_resource type="Texture2D" uid="uid://dstv3nbu5rn8a" path="res://assets/images/tileset/store/Room_Builder_free_48x48.png" id="8_hwp66"]
+[ext_resource type="Texture2D" uid="uid://djx86ufwt0mlb" path="res://assets/images/buttons/E_boton-removebg-preview.png" id="11_2xkjh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2xkjh"]
 texture = ExtResource("5_vkq25")
@@ -34448,6 +34450,9 @@ b = Vector2(-134, 68)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vkq25"]
 size = Vector2(57, 301)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dj21o"]
+size = Vector2(128, 44.5)
+
 [node name="Main" type="Node2D"]
 
 [node name="Edificios" type="TileMapLayer" parent="."]
@@ -34608,7 +34613,7 @@ script = ExtResource("3_y0acb")
 punto_destino = NodePath("../markers/pabellon_c_desde_a")
 
 [node name="Sprite2D" type="Sprite2D" parent="conect_a_c"]
-position = Vector2(10264, -3742)
+position = Vector2(-380, 655)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="conect_a_c"]
 position = Vector2(34, 75.25)
@@ -34627,7 +34632,7 @@ script = ExtResource("3_y0acb")
 punto_destino = NodePath("../markers/pabellon_b_desde_c")
 
 [node name="Sprite2D" type="Sprite2D" parent="conect_c_b"]
-position = Vector2(21755, -7850)
+position = Vector2(11111, -3453)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="conect_c_b"]
 position = Vector2(11669.5, -5527.5)
@@ -34639,11 +34644,24 @@ script = ExtResource("3_y0acb")
 punto_destino = NodePath("../markers/pabellon_a_desde_c")
 
 [node name="Sprite2D" type="Sprite2D" parent="conect_c_a"]
-position = Vector2(21755, -7850)
+position = Vector2(11111, -3453)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="conect_c_a"]
 position = Vector2(11669.5, -5527.5)
 shape = SubResource("RectangleShape2D_vkq25")
+
+[node name="minigame_01" type="Area2D" parent="."]
+script = ExtResource("6_2xkjh")
+ruta_escena_destino = "uid://fw5jpon3gvem"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="minigame_01"]
+position = Vector2(15498, -4505)
+shape = SubResource("RectangleShape2D_dj21o")
+
+[node name="Sprite2D" type="Sprite2D" parent="minigame_01"]
+visible = false
+position = Vector2(15548, -4600)
+texture = ExtResource("11_2xkjh")
 
 [connection signal="body_entered" from="puerta_tienda" to="puerta_tienda" method="_on_body_entered"]
 [connection signal="body_exited" from="puerta_tienda" to="puerta_tienda" method="_on_body_exited"]
@@ -34665,3 +34683,5 @@ shape = SubResource("RectangleShape2D_vkq25")
 [connection signal="body_entered" from="conect_b_c" to="conect_b_c" method="_on_body_entered"]
 [connection signal="body_entered" from="conect_c_b" to="conect_c_b" method="_on_body_entered"]
 [connection signal="body_entered" from="conect_c_a" to="conect_c_a" method="_on_body_entered"]
+[connection signal="body_entered" from="minigame_01" to="minigame_01" method="_on_body_entered"]
+[connection signal="body_exited" from="minigame_01" to="minigame_01" method="_on_body_exited"]
