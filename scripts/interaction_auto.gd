@@ -1,7 +1,7 @@
 extends Area2D
 
 # Configura esto en el Inspector para cada puerta
-@export var escena_destino: PackedScene 
+@export var escena_destino: PackedScene
 @export var posicion_destino: Vector2 = Vector2.ZERO 
 
 func _on_body_entered(body):

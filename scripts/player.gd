@@ -5,6 +5,18 @@ const SPEED = 300.0
 var last_direction: Vector2 = Vector2.RIGHT
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
+
+func _ready():
+	# Usamos call_deferred para esperar a que la escena se estabilice
+	call_deferred("teletransportar_a_spawn")
+
+func teletransportar_a_spawn():
+	if GameManager.posicion_spawn != Vector2.ZERO:
+		global_position = GameManager.posicion_spawn
+		# IMPORTANTE: Resetea el spawn después de usarlo para que 
+		# no se quede pegado si reinicias la escena
+		GameManager.posicion_spawn = Vector2.ZERO
+		
 func _physics_process(_delta: float) -> void:
 	process_movement()
 	process_animation()
